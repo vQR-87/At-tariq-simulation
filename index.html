@@ -129,13 +129,15 @@ unity = unityInstance;
 setTimeout( () => {
 unityInstance.SetFullscreen(1);
 unity.SendMessage("Hook", "setSceneName",urlParams.get("type"));
+setTimeout( () => {
 unity.SendMessage("Player", "SetGravityDownForce", (urlParams.get("gravity")) * 2.83400809717)
 let gravityRatio = 9.81 / urlParams.get("gravity");
 let planetF = 15 * gravityRatio;
 unity.SendMessage("Player", "UpdateThrowForce",planetF);
 unity.SendMessage("Player", "UpdateThrowForce",planetF);
 unity.SendMessage("Player", "UpdatePressureAtSeaLevel", gravityRatio * 1013.25)
-},  7000);
+}, 1000);
+},  6500);
               }).catch((message) => {
                 alert(message);
               });
