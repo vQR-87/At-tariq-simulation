@@ -125,7 +125,7 @@
 unity = unityInstance;
 
 
-unity.SendMessage("Hook", "szetSceneName",urlParams.get("type"));
+unity.SendMessage("Hook", "setSceneName",urlParams.get("type"));
 setTimeout( () => {
 unityInstance.SetFullscreen(1);
 
