@@ -125,10 +125,10 @@
 unity = unityInstance;
 
 
-unity.SendMessage("Hook", "setSceneName",urlParams.get("type"));
+
 setTimeout( () => {
 unityInstance.SetFullscreen(1);
-
+unity.SendMessage("Hook", "setSceneName",urlParams.get("type"));
 unity.SendMessage("Player", "SetGravityDownForce", (urlParams.get("gravity")) * 2.83400809717)
 let gravityRatio = 9.81 / urlParams.get("gravity");
 let planetF = 15 * gravityRatio;
